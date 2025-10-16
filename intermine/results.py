@@ -20,24 +20,14 @@ P3K = sys.version_info >= (3, 0)
 
 logging.basicConfig()
 
-try:
-    # Python 2.x imports
-    from UserDict import UserDict
-    from urllib import urlencode
-    from urllib2 import urlopen
-    from urllib2 import HTTPError
-    from urllib2 import Request
-    from urlparse import urlparse
-    import httplib
-except ImportError:
-    # Python 3.x imports
-    from urllib.parse import urlencode
-    from urllib.parse import urlparse
-    from urllib.request import urlopen
-    from urllib.request import Request
-    from urllib.error import HTTPError
-    from collections import UserDict
-    import http.client as httplib
+# Python 3.x imports
+from urllib.parse import urlencode
+from urllib.parse import urlparse
+from urllib.request import urlopen
+from urllib.request import Request
+from urllib.error import HTTPError
+from collections import UserDict
+import http.client as httplib
 
 from intermine.errors import WebserviceError
 from intermine.model import Attribute, Reference, Collection
